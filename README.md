@@ -193,7 +193,7 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
  La ecuación es: 
  
 
- 
+![ecuacion](https://user-images.githubusercontent.com/55809543/69358194-794b8500-0c54-11ea-837c-98dcda812ea8.png)
    
       
    
