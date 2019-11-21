@@ -170,16 +170,17 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
  ende separarla y cambiar de cadena de caracteres a numeros que es lo que se necesita.
  
  `data=str(Arduino.readline())`
-		`separado=str.split(data,":")`
-		`separado_2=str.split(separado[0],"'")`
-		`separado_3=str.split(separado[1],"\\")`
-		`separado_4=str.split(separado[2],"\\")`
-		`A=float(separado_2[1])`
-		`B=float(separado_3[0])`
-		`C=float(separado_4[0])`
-		`cosenofi=math.cos(C)`
-		`cosenofi=round(cosenofi,3)`
-		`cosenofi=abs(cosenofi)`
+ `separado=str.split(data,":")`
+ `separado_2=str.split(separado[0],"'")`
+ `separado_3=str.split(separado[1],"\\")`
+ `separado_4=str.split(separado[2],"\\")`
+ `A=float(separado_2[1])`
+ `B=float(separado_3[0])`
+ `C=float(separado_4[0])`
+ `cosenofi=math.cos(C)`
+ `cosenofi=round(cosenofi,3)`
+ `cosenofi=abs(cosenofi)`
+ 
  Lo que se efectua en esas variables separado es mediante la funcuón split separar la cadena de caracteres que llega 
  de arduino justo en dónde se haya colocado una (') o (\\), esto para separar los datos de lectura, tanto de corriente,
  voltaje y el angulo de desfase.
@@ -190,7 +191,7 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
  en tiempo discreto. Esto se explica más detallado en el informe.
  
  La ecuación es: 
- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+ 
 
  
    
