@@ -253,5 +253,79 @@ Número de contacto #2: 312 313 02 07
 			servidor.sendmail(direccionDe,direccionPara,correo.as_string())
 			
 			
+			
+			
+Como se puede observar el código se escribio de tal forma que fuera muy intuitivo saber que colocar y en donde colocarlo, el archivo adjunto no es más que el logo del proyecto y además el pdf que se va a crear más adelante. Cabe recordar que se necesita crear una carpeta en donde esté todo ahí mismo, el logo y el pdf para evitar errores del programa.
+
+-Para el PDF va lo siguiente: 
+
+		Titulo= 'Recibo Eléctrico'
+		potencia_actual=potencia_kwh
+		potencia_anterior=potencia_anterior
+		factor_potencia=cosenofi
+		c=canvas.Canvas("reciboPdf_tablas_si.pdf")
+		dt= datetime.now()
+		#ancho de linea
+		c.setLineWidth(.3)
+		#drawMyRuler(c)
+		#fuente y tampano
+		c.setFont('Helvetica',14)
+		#dibuja texto en pos X e Y por puntos. 1pt= 1/72 pulgadas
+		c.drawString(468,630,"Fecha:  " + str(dt))
+		c.drawString(100,630,"Titular:    Juan Camilo Buitrago Diaz ")
+		#c.drawString(130,700,"Juan Camilo Buitrago Diaz")
+		c.drawString(100,600,"Dirección:  Avenida Ferrocarril")
+		c.drawString(100,570,"Manzana 29, casa 16")
+		c.drawString(195,492,"Medición de consumo")
+		c.drawString(262,472,"Mes")
+		c.drawString(256,452,"Actual")
+		c.drawString(252,432,"Pasado")
+		c.drawString(378,472,"Kwh")
+		c.drawString(102,452,"Medida")
+		c.drawString(102,432,"Medida")
+		c.drawString(245,300,"Factor de potencia",2)
+		c.drawString(285,270,str(factor_potencia))
+		c.drawString(378,452,str(potencia_actual))
+		c.drawString(378,432,str(potencia_anterior))
+		#c.drawString(100,660,"Casa 21 ")
+
+		#pos x1 y1 x2 y2
+		c.line(150,628,330,628)
+		c.line(167,598,297,598)
+		c.line(520,628,590,628)
+		#para colocar una imagen
+		c.drawImage("logo.png", 420, 725,width=150, height=100)
+		c.drawImage("logo2.png", 450, 415,width=150, height=100)
+		c.drawImage("codigo.png", 220, 50,width=150, height=100)
+		#tablas
+		c.setFillColorRGB(255, 0,0 )
+		c.setFont("Courier-Bold", 25)
+		c.drawCentredString(290,700, Titulo)
+
+		#cx=50
+		#cy=600
+		#ancho=100
+		#alto=30
+		#c.rect(cx,cy,ancho,alto)
+		c.rect(100,490,360,20)
+		c.rect(100,470,120,20)
+		c.rect(220,470,120,20)
+		c.rect(340,470,120,20)
+		c.rect(100,450,120,20)
+		c.rect(220,450,120,20)
+		c.rect(340,450,120,20)
+		c.rect(100,430,120,20)
+		c.rect(220,430,120,20)
+		c.rect(340,430,120,20)
+
+		c.circle(300,300,80,1)
+
+		# write the document to disk
+		c.showPage()
+		c.save()
+			
       
+   Lo que esto hace es generar un pdf el cual se vera en la siguiente imagen: 
    
+   
+![Captura de pantalla de 2019-11-21 12-32-36](https://user-images.githubusercontent.com/55809543/69361761-1f9a8900-0c5b-11ea-8454-9dd0eb4825d1.png)
