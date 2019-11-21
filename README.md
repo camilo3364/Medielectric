@@ -709,3 +709,7 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 		c.showPage()
 		c.save()
 
+# Autores
+Universidad de Ibagué -Ingeniería Electrónica
+- **Juan Pablo Siachica**
+- **Juan Camilo Buitrago**
