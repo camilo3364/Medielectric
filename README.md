@@ -70,8 +70,7 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
    
   `double A=0;`
   
-  `double C=0;
-  `
+  `double C=0;`
   
   `double B=0;`
   
@@ -150,54 +149,54 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
    
    Después de haber importado las librerías se crea una variable en la que se va a almacenar los datos del Arduino en python
    
-      ` Arduino=serial.Serial("/dev/ttyACM0",baudrate=9600,timeout=10)   `
+       Arduino=serial.Serial("/dev/ttyACM0",baudrate=9600,timeout=10)   `
       
-      Luego de eso creamos el main en python y declaramos variables que posteriormente vamos a usar:  
+   Luego de eso creamos el main en python y declaramos variables que posteriormente vamos a usar:  
       
-      `if __name__ =="__main__":`
-	`sumatoria=0.0`
-	`sumatoria1=0.0`
-	`sumatoria2=0.0`
-	`sumatoria3=0.0`
-	`bandera=0.0`
-	`bandera1=0.0`
-	`bandera2=0.0`
-	`bandera3=0.0`
-	`bandera4=0.0`
-	`corriente_negativa=0`
-	`potencia_promedio=0`
-	`voltaje_negativo=0`
-	`bandera5=0.0`
-	`bandera6=0.0`
-	`bandera7=0.0`
-	`bandera8=0.0`
-	`sumatoria5=0.0`
-	`sumatoria6=0.0`
-	`sumatoria7=0.0`
-	`sumatoria8=0.0`
-	`contador_x=0.0`
-	`potencia1=0.0`
-	`potencia2=0.0`
-	`potencia3=0.0`
-	`potencia4=0.0`
-	`potencia5=0.0`
-	`potencia6=0.0`
-	`potencia7=0.0`
-	`potencia8=0.0`
-	`potencia9=0.0`
-	`potencia10=0.0`
-	`potencia_filtrada=0.0`
-	`potencia_actual=0.0`
-	`potencia_anterior=0.0`
-	`contadornn=0.0`
-	`cosenofi=0.0`
-	`a=0`
-	`c=0`
-	`f=0`
-	`j=0`
-	`bandera_potencia_hora=0`
-	`potencia_hora=0`
-	`potencia_kwh=0`
+      if __name__ =="__main__":
+	sumatoria=0.0
+	sumatoria1=0.0
+	sumatoria2=0.0
+	sumatoria3=0.0
+	bandera=0.0
+	bandera1=0.0
+	bandera2=0.0
+	bandera3=0.0
+	bandera4=0.0
+	corriente_negativa=0
+	potencia_promedio=0
+	voltaje_negativo=0
+	bandera5=0.0
+	bandera6=0.0
+	bandera7=0.0
+	bandera8=0.0
+	sumatoria5=0.0
+	sumatoria6=0.0
+	sumatoria7=0.0
+	sumatoria8=0.0
+	contador_x=0.0
+	potencia1=0.0
+	potencia2=0.0
+	potencia3=0.0
+	potencia4=0.0
+	potencia5=0.0
+	potencia6=0.0
+	potencia7=0.0
+	potencia8=0.0
+	potencia9=0.0
+	potencia10=0.0
+	potencia_filtrada=0.0
+	potencia_actual=0.0
+	potencia_anterior=0.0
+	contadornn=0.0
+	cosenofi=0.0
+	a=0
+	c=0
+	f=0
+	j=0
+	bandera_potencia_hora=0
+	potencia_hora=0
+	potencia_kwh=0
  
  Cada una de estas constantes serán usadas al avanzar en el codigo.
  
