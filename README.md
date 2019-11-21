@@ -556,9 +556,9 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 			sumatoria7=0
 
 		if(bandera4!=0 or bandera5!=0 or bandera6!=0 or bandera7!=0):
-			voltaje= sumatoria4 + sumatoria5 + sumatoria6 + sumatoria7
-			banderay= bandera4 + bandera5
-			voltaje= math.sqrt(2*voltaje / banderay)+15
+			voltaje= sumatoria4 + sumatoria5
+			banderay= bandera4 + bandera5 + bandera6 + bandera7
+			voltaje= math.sqrt(2*voltaje / banderay)
 			voltaje= round(voltaje,3)
 
 
