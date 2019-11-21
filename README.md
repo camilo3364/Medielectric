@@ -192,8 +192,14 @@ para comenzar con la lectura de datos y procesamiento de los mismos:
  
  La ecuación es: 
  
+![ecuacion](https://user-images.githubusercontent.com/55809543/69359916-8d44b600-0c57-11ea-97d0-59e609904ee0.jpeg)
 
-![ecuacion](https://user-images.githubusercontent.com/55809543/69358194-794b8500-0c54-11ea-837c-98dcda812ea8.png)
+Está ecuación se implementa tanto para el voltaje como para la corriente.
+
+-Después de obtener ambos valores RMS se procede a obtener la potencia, puesto que potencia=corriente*voltaje, pero para obtener la potencia para cualqueir carga se debe multiplicar por el coseno del ángulo de desfase. Aunque eso no es todo, porque ese valor de potencia no es más que el valor instantaneo, o sea en esa fracción de momento y lo que se necesita enviar al usuario es la energia consumida en kwh, para esto se usa la siguiente conversión:
+
+![ecuacion2](https://user-images.githubusercontent.com/55809543/69360913-6d15f680-0c59-11ea-8657-8f03a8f22a97.png)
+
    
       
    
