@@ -200,6 +200,58 @@ Está ecuación se implementa tanto para el voltaje como para la corriente.
 
 ![ecuacion2](https://user-images.githubusercontent.com/55809543/69360913-6d15f680-0c59-11ea-8657-8f03a8f22a97.png)
 
-   
+## Ahora que si se posee la información se debe visualizar y la manera en que se efectua esto es mediante la facturación enviando un correo electrónico cada mes y enviando datos a ThingSpeak para mantener un control en todo momento de los datos.
+
+Para esto se usan las librerias smtpelib, reportlab y urllib.request, además de que se necesita un tiempo especifico para enviar cada uno de esto, para ello se usa la libreria time y se importa la función clock.
+
+-Comenzaremos con el correo:
+
+			anfitrion = "smtp.gmail.com"
+			puerto = 587
+			direccionDe = "2420171047@estudiantesunibague.edu.co"
+			contrasenaDe = "5555555"
+			direccionPara = "2420171047@estudiantesunibague.edu.co" # PAra quien
+			servidor = smtplib.SMTP(anfitrion,puerto)
+			servidor.starttls()
+			servidor.login(direccionDe,contrasenaDe)
+			print(servidor.ehlo())
+			asunto = "Medielectric"
+			correo = MIMEMultipart() # SE CREA EL OBJETO
+			correo['From'] = direccionDe
+			correo['To'] = direccionPara
+			correo['Subject'] = asunto
+			p=str(potencia_filtrada)
+			#logo
+			file = open("logo.png", "rb")
+			attach_image = MIMEImage(file.read())
+			attach_image.add_header('Content-Disposition', 'attachment; filename = "logo.png"')
+			correo.attach(attach_image)
+			#FIn logo
+			message = """Estimado usuario, Juan Camilo Buitrago Diaz
+como está acordado en el contrato de mensualidad de pago se le anexa el recibo eléctrico para su cancelación.
+
+Su fiel y eficiente servicio Medielectric estará atento y dipuesto a servirlo en lo que podamos.
+
+Número de contacto #1: 272 56 47
+Número de contacto #2: 312 313 02 07
+
+                                        Fan page:
+								www.facebook.com/Medielectric
+							  	   www.Medielectric.com
+ """
+			#Archivo adjundo
+			part = MIMEBase('application', "octet-stream")
+			part.set_payload(open("reciboPdf_tablas_si.pdf", "rb").read())
+			encoders.encode_base64(part)
+			part.add_header('Content-Disposition',
+                        'attachment; filename="Recibo electrico"')
+			correo.attach(part)
+			#fin de adjuntar
+
+			mensaje = MIMEText(message)
+			correo.attach(mensaje)
+			servidor.sendmail(direccionDe,direccionPara,correo.as_string())
+			
+			
       
    
