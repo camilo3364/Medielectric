@@ -358,20 +358,35 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 
 	#Librerias
 `import serial,math,smtplib,time,threading,itertools,urllib.request`
+
 `import os.path as op`
+
 `from datetime import date,timedelta,datetime`
+
 `from email.mime.multipart import MIMEMultipart`
+
 `from email.mime.text import MIMEText`
+
 `from email.mime.image import MIMEImage`
+
 `from email.mime.base import MIMEBase`
+
 `from email import encoders`
+
 `from time import time,clock`
+
 `from reportlab.lib import colors`
+
 `from reportlab.lib.pagesizes import letter`
+
 `from reportlab.platypus import SimpleDocTemplate, Table, TableStyle`
+
 `from reportlab.pdfgen import canvas`
+
 `from reportlab.lib.pagesizes import letter`
+
 `from reportlab.lib.units import inch`
+
 `from reportlab.lib.colors import pink, green, brown, white`
 
 `#Serial`
