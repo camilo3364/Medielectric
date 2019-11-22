@@ -392,27 +392,46 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 # Código completo!
 
 `#Librerias`
+
 `import serial,math,smtplib,time,threading,itertools,urllib.request`
+
 `import os.path as op`
+
 `from datetime import date,timedelta,datetime`
+
 `from email.mime.multipart import MIMEMultipart`
+
 `from email.mime.text import MIMEText`
+
 `from email.mime.image import MIMEImage`
+
 `from email.mime.base import MIMEBase`
+
 `from email import encoders`
+
 `from time import time,clock`
+
 `from reportlab.lib import colors`
+
 `from reportlab.lib.pagesizes import letter`
+
 `from reportlab.platypus import SimpleDocTemplate, Table, TableStyle`
+
 `from reportlab.pdfgen import canvas`
+
 `from reportlab.lib.pagesizes import letter`
+
 `from reportlab.lib.units import inch`
+
 `from reportlab.lib.colors import pink, green, brown, white`
 
+
 `#Serial`
+
 `Arduino=serial.Serial("/dev/ttyACM1",baudrate=9600,timeout=10)`
 
 `#Main
+
 `if __name__ =="__main__":`
 
 	#Variables Corriente
@@ -468,16 +487,16 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 		separado= str.split(data,":")
 		separado_2= str.split(separado[0],"'")
 		separado_3= str.split(separado[1],"\\")
-		#separado_4= str.split(separado[2],"\\")
+		separado_4= str.split(separado[2],"\\")
 		A= float(separado_2[1])
 		B= float(separado_3[0])
-		#C= float(separado_4[0])
+		C= float(separado_4[0])
 
 
 		##Factor de potencia##
-		#cosenofi= math.cos(C)
-		#cosenofi= round(cosenofi,3)
-		#cosenofi= abs(cosenofi)
+		cosenofi= math.cos(C)
+		cosenofi= round(cosenofi,3)
+		cosenofi= abs(cosenofi)
 
 
 		##Corriente##
@@ -510,7 +529,7 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 		if(bandera!=0 or bandera1!=0 or bandera2!=0 or bandera3!=0):
 			corriente= sumatoria + sumatoria1
 			banderax= bandera + bandera1 + bandera2 + bandera3
-			corriente= math.sqrt(corriente / banderax)
+			corriente= math.sqrt(2*corriente / banderax)
 			corriente= round(corriente,3)
 
 
@@ -541,9 +560,9 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 			sumatoria7=0
 
 		if(bandera4!=0 or bandera5!=0 or bandera6!=0 or bandera7!=0):
-			voltaje= sumatoria4 + sumatoria5 + sumatoria6 + sumatoria7
-			banderay= bandera4 + bandera5
-			voltaje= math.sqrt(2*voltaje / banderay)+15
+			voltaje= sumatoria4 + sumatoria5
+			banderay= bandera4 + bandera5 + bandera6 + bandera7
+			voltaje= math.sqrt(2*voltaje / banderay)
 			voltaje= round(voltaje,3)
 
 
@@ -660,7 +679,7 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 		Titulo= 'Recibo Eléctrico'
 		#potencia_actual=potencia_kwh
 		#potencia_anterior=potencia_anterior
-		factor_potencia=1.00
+		factor_potencia=cosenofi
 		c=canvas.Canvas("reciboPdf_tablas_si.pdf")
 		hoy=date.today()
 		mes_actual=hoy.month
