@@ -391,43 +391,28 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 
 # Código completo!
 
-	#Librerias
+`#Librerias`
 `import serial,math,smtplib,time,threading,itertools,urllib.request`
-
 `import os.path as op`
-
 `from datetime import date,timedelta,datetime`
-
 `from email.mime.multipart import MIMEMultipart`
-
 `from email.mime.text import MIMEText`
-
 `from email.mime.image import MIMEImage`
-
 `from email.mime.base import MIMEBase`
-
 `from email import encoders`
-
 `from time import time,clock`
-
 `from reportlab.lib import colors`
-
 `from reportlab.lib.pagesizes import letter`
-
 `from reportlab.platypus import SimpleDocTemplate, Table, TableStyle`
-
 `from reportlab.pdfgen import canvas`
-
 `from reportlab.lib.pagesizes import letter`
-
 `from reportlab.lib.units import inch`
-
 `from reportlab.lib.colors import pink, green, brown, white`
 
 `#Serial`
 `Arduino=serial.Serial("/dev/ttyACM1",baudrate=9600,timeout=10)`
 
-`#Main`
+`#Main
 `if __name__ =="__main__":`
 
 	#Variables Corriente
@@ -556,9 +541,9 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
 			sumatoria7=0
 
 		if(bandera4!=0 or bandera5!=0 or bandera6!=0 or bandera7!=0):
-			voltaje= sumatoria4 + sumatoria5
-			banderay= bandera4 + bandera5 + bandera6 + bandera7
-			voltaje= math.sqrt(2*voltaje / banderay)
+			voltaje= sumatoria4 + sumatoria5 + sumatoria6 + sumatoria7
+			banderay= bandera4 + bandera5
+			voltaje= math.sqrt(2*voltaje / banderay)+15
 			voltaje= round(voltaje,3)
 
 
@@ -639,7 +624,7 @@ https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/
                                         Fan page:
 								www.facebook.com/Medielectric
 							  	   www.Medielectric.com
- 	"""
+		 """
 			#Archivo adjundo
 			part = MIMEBase('application', "octet-stream")
 			part.set_payload(open("reciboPdf_tablas_si.pdf", "rb").read())
