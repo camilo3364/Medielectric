@@ -3,7 +3,7 @@
 ##### Medidor electrónico
 Este proyecto consiste en la medición de la red eléctrica por medio de un sensor sct no invasivo de corriente eléctrica y 
 un transformador de voltaje para poder reducir la señal, además de un circuito acondicionador para que el adc(conversor 
-analogo digital) pueda procesar esta información sin daño alguno. Esto para cargar resistivas es innato, pero para cargas
+analogo digital) pueda procesar esta información sin daño alguno. Esto para cargas resistivas es innato, pero para cargas
 reactivas como un motor no se puede calcular tan fácil, entonces se recurre a encontrar el desfase que se génera entre la
 corriente y el voltaje, para ello se creó un circuito electrónico para detectar el cruce por cero de ambas señales y ayudados con
 una compuerta Xor comparar cuando ambas señales fueran diferentes, siendo que cuando fueran diferentes ambas señales, la compuerta
